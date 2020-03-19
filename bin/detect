@@ -2,9 +2,11 @@
 # we'll expect a file that lists the private buildpacks to apply
 
 # this pack is valid for apps with a hello.txt in the root
+echo $1/.heroku-private-build.lst
 if [ -f $1/.heroku-private-build.lst ]; then
   echo "Private buildpack detected."
   exit 0
 else
+  echo "error"
   exit 1
 fi
